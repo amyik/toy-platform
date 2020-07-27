@@ -1,5 +1,6 @@
 package com.albert.securingweb;
 
+import com.albert.securingweb.controller.SecuredController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class SecuredControllerWebMvcIntegrationTest {
     @Test
     public void givenAuthRequestOnPrivateService_shouldSucceedWith200() throws Exception {
 
-        mvc.perform(get("/private2").contentType(MediaType.APPLICATION_JSON))
+        mvc.perform(get("/private").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 
